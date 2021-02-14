@@ -1,6 +1,6 @@
 {
   "name": "unreal-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "zimomo",
   "description": "unreal-ui",
   "main": "lib/unreal-ui.umd.min.js",
