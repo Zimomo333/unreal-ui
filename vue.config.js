@@ -18,7 +18,16 @@ function getComponentEntries(dir) {
   return componentEntries
 }
 
-module.exports = {
+const devConfig = {
+  css: {
+    sourceMap: true,  // 显示样式来源，方便调试
+  }
+  // configureWebpack: {
+  //     resolve: pub.resolve
+  // },
+}
+
+const proConfig = {
   outputDir: path.resolve('lib'),
   productionSourceMap: false,
   configureWebpack: {
@@ -27,7 +36,17 @@ module.exports = {
     },
     output: {
       filename: '[name]/index.js',
+      libraryExport: 'default',
+      libraryTarget: 'commonjs2',
     },
+    // resolve: {
+    //   extensions: ['.js', '.vue', '.json'],
+    //   alias: {
+    //       'src': path.resolve(__dirname,'src'),
+    //       'components': path.resolve(__dirname,'packages'),
+    //       'unreal-ui': path.resolve(__dirname,'packages/index.js'),
+    //   }
+    // },
   },
   css: {
     extract: {
@@ -44,3 +63,5 @@ module.exports = {
     config.entryPoints.delete('app')  // 删除自动加上的入口：./src/App.vue
   }
 }
+
+module.exports = process.env.NODE_ENV === "development" ? devConfig : proConfig;

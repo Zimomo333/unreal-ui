@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <unreal-button style="margin:100px;">你好，世界</unreal-button>
+    <unreal-button style="margin:100px;">Button</unreal-button>
   </div>
 </template>
 
@@ -12,4 +12,17 @@ export default {
 </script>
 
 <style lang="scss">
+  body {
+      margin: 0;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.5;
+      color: #44476A;
+      text-align: left;
+      background-color: #e6e7ee;
+  }
+  // *, ::before, ::after {
+  //     box-sizing: border-box;
+  // }
 </style>
