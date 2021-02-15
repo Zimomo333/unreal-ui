@@ -1,4 +1,5 @@
-import UnrealButton from './src/button.vue';
+import './button.scss';
+import UnrealButton from './button.vue';
 
 /* istanbul ignore next */
 UnrealButton.install = function (Vue) {

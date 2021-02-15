@@ -1,4 +1,4 @@
-import './scss/unreal-ui.scss';
+import '../scss/unreal-ui.scss';
 import UnrealButton from './button';
 
 // 存储组件列表

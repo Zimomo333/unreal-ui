@@ -1,9 +1,9 @@
 {
   "name": "unreal-ui",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "zimomo",
   "description": "unreal-ui",
-  "main": "lib/unreal-ui.umd.min.js",
+  "main": "lib/index/index.js",
   "keyword": "vue ui",
   "license": "MIT",
   "private": false,
