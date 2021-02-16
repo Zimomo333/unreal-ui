@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import App from './App.vue';
 
-// 导入组件库
-import UnrealUI from '../lib/index/index.js';
-import '../lib/index/style.css'
-// 注册组件库
-Vue.use(UnrealUI);
+import { Button } from 'unreal-ui'
+// import UnrealUI from 'unreal-ui'
+
+Vue.use(Button)
+// Vue.use(UnrealUI)
 
 Vue.config.productionTip = false;
 
