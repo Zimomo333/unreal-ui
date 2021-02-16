@@ -22,9 +22,6 @@ const devConfig = {
   css: {
     sourceMap: true,  // 显示样式来源，方便调试
   }
-  // configureWebpack: {
-  //     resolve: pub.resolve
-  // },
 }
 
 const proConfig = {
@@ -35,18 +32,14 @@ const proConfig = {
       ...getComponentEntries('packages'),
     },
     output: {
+      // filename: (pathData) => {
+      //   // 整体入口放到根目录
+      //   return pathData.chunk.name === 'index' ? '[name].js' : '[name]/index.js';
+      // },
       filename: '[name]/index.js',
       libraryExport: 'default',
       libraryTarget: 'commonjs2',
     },
-    // resolve: {
-    //   extensions: ['.js', '.vue', '.json'],
-    //   alias: {
-    //       'src': path.resolve(__dirname,'src'),
-    //       'components': path.resolve(__dirname,'packages'),
-    //       'unreal-ui': path.resolve(__dirname,'packages/index.js'),
-    //   }
-    // },
   },
   css: {
     extract: {
