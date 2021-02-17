@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
 
-import { Button } from 'unreal-ui'
+// import { Button } from 'unreal-ui'
 // import UnrealUI from 'unreal-ui'
+import Button from '../packages/button/index';
 
 Vue.use(Button)
 // Vue.use(UnrealUI)

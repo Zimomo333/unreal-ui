@@ -1,14 +1,43 @@
 <template>
   <div>
-    <button class="btn" type="button">
-      <slot></slot>
+    <button
+      @click="handleClick"
+      :class="[
+        'btn',
+        type ? type : '',
+        shape ? shape : '',
+        size ? size : '',
+        {
+          'loading': loading,
+        }
+      ]"
+      type="button">
+      <div v-if="loading">
+        <img class="icon_loading" src="../../assets/icons/loading.svg" />
+        <span>加载中...</span>
+      </div>
+      <slot v-else></slot>
     </button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'unreal-button'
+  name: 'unreal-button',
+  props: {
+    type: String,
+    size: String,
+    shape: String,
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    handleClick(evt) {
+      this.$emit('click', evt);
+    }
+  }
 }
 </script>
 
@@ -25,12 +54,57 @@ export default {
     box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
     color: #31344b;
     background-color: #e6e7ee;
+    outline: none;
     
+    &.loading {
+      border: 0;
+      box-shadow: 0 0;
+    }
+
     &:hover,
     &:focus,
     &:active {
       border-color: #e6e7ee;
       box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
+    }
+
+    &.round {
+      border-radius: 2rem;
+    }
+
+    &.circle {
+      border-radius: 50%;
+    }
+
+    &.mini {
+      padding: 0.5rem;
+      font-size: 0.7rem !important;
+    }
+
+    &.small {
+      padding: 0.6rem;
+      font-size: 0.875rem !important;
+    }
+
+    &.large {
+      font-size: 1.25rem !important;
+    }
+
+
+    .icon_loading {
+      vertical-align: text-bottom;
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5rem;
+      @keyframes rotating {
+        0% {
+          transform:rotate(0deg)
+        }
+        to {
+          transform:rotate(1turn)
+        }
+      }
+      animation: rotating 1s linear infinite;
     }
   }
 </style>
