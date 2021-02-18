@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <unreal-button>你好，世界！</unreal-button>
+    <unreal-button>Hello, world.</unreal-button>
+    <unreal-carousel style="width:500px;height:500px;margin:50px;"></unreal-carousel>
   </div>
 </template>
 
@@ -14,6 +15,8 @@ export default {
 <style>
 body {
     background: #e6e7ee;
+    display: flex;
+    justify-content: center;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
