@@ -1,8 +1,11 @@
-import '../assets/scss/unreal-ui.scss';
+// import '../assets/scss/unreal-ui.scss';
 import UnrealButton from './button';
+import UnrealCarousel from './carousel';
+import UnrealCarouselItem from './carousel-item';
+
 
 // 存储组件列表
-const components = [UnrealButton];
+const components = [UnrealButton, UnrealCarousel, UnrealCarouselItem];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
 const install = function (Vue) {
@@ -22,4 +25,6 @@ export default {
   install,
   // 以下是具体的组件列表
   UnrealButton,
+  UnrealCarousel,
+  UnrealCarouselItem,
 };

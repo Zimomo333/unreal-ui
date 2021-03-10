@@ -1,14 +1,18 @@
 <template>
   <div id="app">
     <unreal-button>Hello, world.</unreal-button>
-    <unreal-carousel style="width:500px;height:500px;margin:50px;"></unreal-carousel>
+    <test-carousel></test-carousel>
   </div>
 </template>
 
 <script>
+import TestCarousel from './components/carousel';
 
 export default {
   name: 'App',
+  components: {
+    TestCarousel,
+  }
 }
 </script>
 

@@ -12,7 +12,6 @@
     @click="handleItemClick"
     :style="itemStyle"
   >
-    <div v-if="$parent.type === 'card'" v-show="!active" class="el-carousel__mask"></div>
     <slot></slot>
   </div>
 </template>
@@ -21,7 +20,7 @@
 import { autoprefixer } from '../../utils/util';
 const CARD_SCALE = 0.83;
 export default {
-  name: 'ElCarouselItem',
+  name: 'unreal-carousel-item',
 
   props: {
     name: String,
@@ -133,52 +132,34 @@ export default {
 };
 </script>
 
-<style>
-.el-carousel__item,
-.el-carousel__mask {
+<style lang="scss">
+.el-carousel__item {
   position: absolute;
   height: 100%;
   top: 0;
   left: 0;
-}
-.el-carousel__item {
   width: 100%;
   display: inline-block;
   overflow: hidden;
   z-index: 0;
-}
-.el-carousel__item.is-active {
-  z-index: 2;
-}
-.el-carousel__item.is-animating {
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-  transition: -webkit-transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-}
-.el-carousel__item--card {
-  width: 50%;
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-  transition: -webkit-transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-}
-.el-carousel__item--card.is-in-stage {
-  cursor: pointer;
-  z-index: 1;
-}
-.el-carousel__item--card.is-in-stage.is-hover .el-carousel__mask,
-.el-carousel__item--card.is-in-stage:hover .el-carousel__mask {
-  opacity: 0.12;
-}
-.el-carousel__item--card.is-active {
-  z-index: 2;
-}
-.el-carousel__mask {
-  width: 100%;
-  background-color: #fff;
-  opacity: 0.24;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.is-active {
+    z-index: 2;
+  }
+
+  &.is-animating {
+    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+    transition: -webkit-transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  }
 }
 </style>

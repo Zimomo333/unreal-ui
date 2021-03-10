@@ -1,34 +1,11 @@
 <template>
   <div
-    class="carousel"
-    :class="carouselClasses"
+    class="ur-carousel"
+    :class="direction"
     @mouseenter.stop="handleMouseEnter"
     @mouseleave.stop="handleMouseLeave"
-  >
-    <ol class="carousel-indicators">
-      <li
-        v-for="(item, index) in items"
-        :key="index"
-        :class="[
-          'el-carousel__indicator',
-          'el-carousel__indicator--' + direction,
-          { 'active': index === activeIndex }]"
-        @mouseenter="handleIndicatorHover(index)"
-        @click.stop="handleIndicatorClick(index)"
-      >
-        <button class="el-carousel__button">
-          <span v-if="hasLabel">{{ item.label }}</span>
-        </button>
-      </li>
-    </ol>
-    <div class="carousel-img">
-      <!-- <img class="d-block w-100" src="../../assets/img/carousel/image-2.jpg" alt="First slide" />
-      <img class="d-block w-100" src="../../assets/img/carousel/image-3.jpg" alt="Second slide" />
-      <img class="d-block w-100" src="../../assets/img/carousel/image-1.jpg" alt="Third slide" /> -->
-      <carousel-item v-for="item in 5" :key="item">
-        <h3 class="small">{{ item }}</h3>
-      </carousel-item>
-    </div>
+    >
+    <slot class="carousel-img"></slot>
     <div class="carousel-control-prev">
       <button
         type="button"
@@ -38,28 +15,34 @@
         @click.stop="setActiveItem(activeIndex - 1)"
         class="icon-wrap"
       >
-        <img class="icon" src="../../assets/icons/arrow-left.svg"/>
+        <img class="icon" src="../../assets/icons/arrow.svg"/>
       </button>
     </div>
     <div class="carousel-control-next">
       <button
         type="button"
         v-show="(arrow === 'always' || hover) && (loop || activeIndex < items.length - 1)"
-        @mouseenter="handleButtonEnter('right')"
-        @mouseleave="handleButtonLeave"
         @click.stop="setActiveItem(activeIndex + 1)"
         class="icon-wrap"
       >
-        <img class="icon" src="../../assets/icons/arrow-right.svg"/>
+        <img class="icon" src="../../assets/icons/arrow.svg"/>
       </button>
     </div>
+    <ol
+      v-if="indicatorPosition !== 'none'"
+      class="carousel-indicators"
+    >
+      <li
+        v-for="(item, index) in items"
+        :key="index"
+        :class="{ 'active': index === activeIndex }"
+        @click.stop="handleIndicatorClick(index)"
+      />
+    </ol>
   </div>
 </template>
 
 <script>
-// import throttle from 'throttle-debounce/throttle';
-// import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
-import carouselItem from './carousel-item'
 
 export default {
   name: 'unreal-carousel',
@@ -105,10 +88,6 @@ export default {
     },
   },
 
-  components: {
-    carouselItem,
-  },
-
   data() {
     return {
       items: [],
@@ -124,26 +103,8 @@ export default {
       return this.arrow !== 'never' && this.direction !== 'vertical';
     },
 
-    hasLabel() {
-      return this.items.some(item => item.label.toString().length > 0);
-    },
-
-    carouselClasses() {
-      const classes = ['el-carousel', 'el-carousel--' + this.direction];
-      if (this.type === 'card') {
-        classes.push('el-carousel--card');
-      }
-      return classes;
-    },
-
     indicatorsClasses() {
       const classes = ['el-carousel__indicators', 'el-carousel__indicators--' + this.direction];
-      if (this.hasLabel) {
-        classes.push('el-carousel__indicators--labels');
-      }
-      if (this.indicatorPosition === 'outside' || this.type === 'card') {
-        classes.push('el-carousel__indicators--outside');
-      }
       return classes;
     },
   },
@@ -210,7 +171,7 @@ export default {
     },
 
     updateItems() {
-      this.items = this.$children.filter(child => child.$options.name === 'ElCarouselItem');
+      this.items = this.$children.filter(child => child.$options.name === 'unreal-carousel-item');
     },
 
     resetItemPosition(oldIndex) {
@@ -276,12 +237,6 @@ export default {
     handleIndicatorClick(index) {
       this.activeIndex = index;
     },
-
-    handleIndicatorHover(index) {
-      if (this.trigger === 'hover' && index !== this.activeIndex) {
-        this.activeIndex = index;
-      }
-    },
   },
 
   created() {
@@ -304,33 +259,99 @@ export default {
 </script>
 
 <style lang="scss">
-.carousel {
+.ur-carousel {
   position: relative;
   box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff;
-  padding: 1rem;
   border-radius: 0.55rem;
   border-color: #d1d9e6;
   border: 0.0625rem solid #fafbfe;
-  overflow: hidden;
+
+  &.horizontal {
+    overflow-x: hidden;
+
+    .carousel-indicators {
+      bottom: 0.4rem;
+      width: 100%;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      height: 100%;
+      align-items: center;
+
+      .icon-wrap {
+        padding: 0.4rem;
+      }
+    }
+
+    .carousel-control-prev {
+      left: 0.6rem;
+    }
+
+    .carousel-control-next {
+      right: 0.6rem;
+
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.vertical {
+    overflow-y: hidden;
+
+    .carousel-indicators {
+      right: 0.4rem;
+      height: 100%;
+      flex-direction: column;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 100%;
+      justify-content: center;
+
+      .icon-wrap {
+        padding: 0 0.8rem;
+      }
+    }
+
+    .carousel-control-prev {
+      top: 0.6rem;
+
+      img {
+        transform: rotate(90deg);
+      }
+    }
+
+    .carousel-control-next {
+      bottom: 0.6rem;
+      
+      img {
+        transform: rotate(270deg);
+      }
+    }
+
+  }
 
   .carousel-indicators {
     position: absolute;
-    right: 0;
-    bottom: 0.5rem;
-    left: 0;
     z-index: 5;
     display: flex;
-    justify-content: center;
-    padding-left: 0;
     list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
 
     li {
       height: 1.2rem;
       width: 1.2rem;
-      border-radius: 50%;
       background: transparent;
-      margin: 0 0.4rem;
+      margin: 0.4rem;
+      border: 0;
+      border-radius: 50%;
       box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
+      cursor: pointer;
 
       &.active {
         box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
@@ -351,49 +372,31 @@ export default {
     }
   }
 
-  .carousel-control-prev {
-    left: 0;
-  }
-
-  .carousel-control-next {
-    right: 0;
-  }
 
   .carousel-control-prev,
   .carousel-control-next {
     position: absolute;
-    top: 0;
-    bottom: 0;
     z-index: 5;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 14%;
     color: #ecf0f3;
-    text-align: center;
 
     .icon-wrap{
-      padding: 0.4rem;
+      border: 0;
       box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
-      border-radius: 50%;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      background: transparent;
+      
       .icon {
         display: inline-block;
-        width: 1.7rem;
+        width: 1rem;
         height: 1.7rem;
       }
       
-      &:hover,
-      &:focus {
+      &:active {
         box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
       }
     }
   }
-  @media (prefers-reduced-motion: reduce) {
-    .carousel-control-prev,
-    .carousel-control-next {
-      transition: none;
-    }
-  }
-
 }
 </style>
