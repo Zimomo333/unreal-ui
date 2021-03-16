@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <unreal-button>Hello, world.</unreal-button>
+    <ur-button>Hello, world.</ur-button>
     <test-carousel></test-carousel>
   </div>
 </template>

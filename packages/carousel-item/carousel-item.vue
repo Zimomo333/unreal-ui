@@ -1,10 +1,9 @@
 <template>
   <div
     v-show="ready"
-    class="el-carousel__item"
+    class="ur-carousel-item"
     :class="{
       'is-active': active,
-      'el-carousel__item--card': $parent.type === 'card',
       'is-in-stage': inStage,
       'is-hover': hover,
       'is-animating': animating
@@ -20,7 +19,7 @@
 import { autoprefixer } from '../../utils/util';
 const CARD_SCALE = 0.83;
 export default {
-  name: 'unreal-carousel-item',
+  name: 'ur-carousel-item',
 
   props: {
     name: String,
@@ -133,7 +132,7 @@ export default {
 </script>
 
 <style lang="scss">
-.el-carousel__item {
+.ur-carousel-item {
   position: absolute;
   height: 100%;
   top: 0;

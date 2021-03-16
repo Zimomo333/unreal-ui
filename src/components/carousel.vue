@@ -1,10 +1,10 @@
 <template>
   <div class="test-carousel">
-    <unreal-carousel style="width:800px;height:500px;margin:50px;" direction="vertical">
-      <unreal-carousel-item v-for="item in items" :key="item.id">
+    <ur-carousel style="width:800px;height:500px;margin:50px;" direction="horizontal">
+      <ur-carousel-item v-for="item in items" :key="item.id">
         <img :src="item.imgSrc">
-      </unreal-carousel-item>
-    </unreal-carousel>
+      </ur-carousel-item>
+    </ur-carousel>
   </div>
 </template>
 

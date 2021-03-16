@@ -1,7 +1,7 @@
-import UnrealButton from './button.vue';
+import UrButton from './button.vue';
 /* istanbul ignore next */
-UnrealButton.install = function (Vue) {
-  Vue.component(UnrealButton.name, UnrealButton);
+UrButton.install = function (Vue) {
+  Vue.component(UrButton.name, UrButton);
 };
 
-export default UnrealButton;
+export default UrButton;

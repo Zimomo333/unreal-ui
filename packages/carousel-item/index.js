@@ -1,7 +1,7 @@
-import UnrealCarouselItem from '../carousel/carousel-item';
+import UrCarouselItem from './carousel-item.vue';
 /* istanbul ignore next */
-UnrealCarouselItem.install = function (Vue) {
-  Vue.component(UnrealCarouselItem.name, UnrealCarouselItem);
+UrCarouselItem.install = function (Vue) {
+  Vue.component(UrCarouselItem.name, UrCarouselItem);
 };
 
-export default UnrealCarouselItem;
+export default UrCarouselItem;

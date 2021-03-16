@@ -45,7 +45,7 @@
 <script>
 
 export default {
-  name: 'unreal-carousel',
+  name: 'ur-carousel',
 
   props: {
     initialIndex: {
@@ -171,7 +171,7 @@ export default {
     },
 
     updateItems() {
-      this.items = this.$children.filter(child => child.$options.name === 'unreal-carousel-item');
+      this.items = this.$children.filter(child => child.$options.name === 'ur-carousel-item');
     },
 
     resetItemPosition(oldIndex) {
