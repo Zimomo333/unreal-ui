@@ -21,6 +21,9 @@ function getComponentEntries(dir) {
 const devConfig = {
   css: {
     sourceMap: true,  // 显示样式来源，方便调试
+  },
+  chainWebpack: config => {
+    config.resolve.alias.set('@', path.resolve('./'));
   }
 }
 
@@ -54,6 +57,8 @@ const proConfig = {
     config.plugins.delete('html')
     config.plugins.delete('hmr')
     config.entryPoints.delete('app')  // 删除自动加上的入口：./src/App.vue
+  
+    config.resolve.alias.set('@', path.resolve('./'));
   }
 }
 
