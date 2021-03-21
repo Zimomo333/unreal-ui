@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { autoprefixer } from '../../utils/util';
+import { autoprefixer } from '@/utils/util';
 const CARD_SCALE = 0.83;
 export default {
   name: 'ur-carousel-item',

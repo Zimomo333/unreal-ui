@@ -15,7 +15,7 @@
         @click.stop="setActiveItem(activeIndex - 1)"
         class="icon-wrap"
       >
-        <img class="icon" src="../../assets/icons/arrow.svg"/>
+        <img class="icon" src="@/assets/icons/arrow.svg"/>
       </button>
     </div>
     <div class="carousel-control-next">
@@ -25,7 +25,7 @@
         @click.stop="setActiveItem(activeIndex + 1)"
         class="icon-wrap"
       >
-        <img class="icon" src="../../assets/icons/arrow.svg"/>
+        <img class="icon" src="@/assets/icons/arrow.svg"/>
       </button>
     </div>
     <ol

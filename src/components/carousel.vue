@@ -17,15 +17,15 @@ export default {
       items: [
         {
           id: 1,
-          imgSrc: require('../../assets/img/carousel/image-1.jpg'),
+          imgSrc: require('@/assets/img/carousel/image-1.jpg'),
         },
         {
           id: 2,
-          imgSrc: require('../../assets/img/carousel/image-2.jpg'),
+          imgSrc: require('@/assets/img/carousel/image-2.jpg'),
         },
         {
           id: 3,
-          imgSrc: require('../../assets/img/carousel/image-3.jpg'),
+          imgSrc: require('@/assets/img/carousel/image-3.jpg'),
         },
       ]
     }
