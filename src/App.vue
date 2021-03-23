@@ -5,6 +5,14 @@
       <template slot="prepend">Http://</template>
       <ur-button slot="append">提交</ur-button>
     </ur-input>
+    <ur-tag
+      v-for="tag in tags"
+      :key="tag.name"
+      closable
+      @close="handleClose"
+      :type="tag.type">
+      {{tag.name}}
+    </ur-tag>
     <test-carousel></test-carousel>
   </div>
 </template>
@@ -20,6 +28,18 @@ export default {
   data() {
     return {
       input: '',
+      tags: [
+        { name: '标签一', type: '' },
+        { name: '标签二', type: 'success' },
+        { name: '标签三', type: 'info' },
+        { name: '标签四', type: 'warning' },
+        { name: '标签五', type: 'danger' }
+      ],
+    }
+  },
+  methods: {
+    handleClose(tag) {
+      this.tags.splice(this.tags.indexOf(tag), 1);
     }
   }
 }
