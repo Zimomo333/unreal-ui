@@ -11,8 +11,8 @@
       }
     ]"
     type="button">
-    <div v-if="loading">
-      <img class="icon_loading" src="@/assets/icons/loading.svg" />
+    <div v-if="loading" class="loading">
+      <img class="loading_icon" src="@/assets/icons/loading.svg" />
       <span>加载中...</span>
     </div>
     <slot v-else></slot>
@@ -55,7 +55,7 @@ export default {
     
     &.loading {
       border: 0;
-      box-shadow: 0 0;
+      box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
     }
 
     &:hover {
@@ -89,21 +89,25 @@ export default {
       font-size: 1.25rem !important;
     }
 
-
-    .icon_loading {
-      vertical-align: text-bottom;
-      width: 1rem;
-      height: 1rem;
-      margin-right: 0.5rem;
-      @keyframes rotating {
-        0% {
-          transform:rotate(0deg)
+    .loading {
+      .loading_icon {
+        vertical-align: middle;
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.5rem;
+        @keyframes rotating {
+          0% {
+            transform:rotate(0deg)
+          }
+          to {
+            transform:rotate(1turn)
+          }
         }
-        to {
-          transform:rotate(1turn)
-        }
+        animation: rotating 1s linear infinite;
       }
-      animation: rotating 1s linear infinite;
+      span {
+        vertical-align: middle;
+      }
     }
   }
 </style>

@@ -430,7 +430,6 @@ export default {
   .ur-textarea {
     position: relative;
     display: inline-block;
-    width: 100%;
     vertical-align: bottom;
     font-size: 14px;
 
@@ -506,7 +505,6 @@ export default {
     position: relative;
     font-size: 14px;
     display: inline-block;
-    width: 100%;
 
     &::-webkit-scrollbar {
       z-index: 11;
@@ -706,7 +704,6 @@ export default {
   .ur-input-group {
     line-height: normal;
     display: inline-table;
-    width: 100%;
     border-collapse: separate;
     border-spacing: 0;
   }

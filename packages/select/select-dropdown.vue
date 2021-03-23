@@ -83,7 +83,7 @@ export default {
   z-index: 1001;
   border: 0.0625rem solid #D1D9E6;
   border-radius: 0.55rem;
-  background-color: transparent;
+  background-color: #e6e7ee;
   -webkit-box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
   box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
   -webkit-box-sizing: border-box;

@@ -1,27 +1,54 @@
 <template>
   <div id="app">
-    <ur-button>Hello, world.</ur-button>
-    <ur-input class="ur-input" v-model="input" placeholder="请输入内容" clearable>
-      <template slot="prepend">Http://</template>
-      <ur-button slot="append">提交</ur-button>
-    </ur-input>
-    <ur-tag
-      v-for="tag in tags"
-      :key="tag.name"
-      closable
-      @close="handleClose"
-      :type="tag.type">
-      {{tag.name}}
-    </ur-tag>
-    <el-select v-model="value" placeholder="请选择">
-      <el-option
-        v-for="item in options"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value">
-      </el-option>
-    </el-select>
-    <test-carousel></test-carousel>
+    <div>
+      <p class="title">按钮</p>
+      <ur-button class="button-demo">弹起</ur-button>
+      <ur-button class="button-demo" :loading="true">Loading...</ur-button>
+      <ur-button class="button-demo active">按下</ur-button>
+    </div>
+    <div>
+      <p class="title">输入框</p>
+      <ur-input class="input-demo" v-model="input" placeholder="请输入内容" clearable>
+        <template slot="prepend">Http://</template>
+      </ur-input>
+      <br>
+      <ur-input class="input-demo" v-model="input" placeholder="请输入内容" clearable>
+        <template slot="append">.com</template>
+      </ur-input>
+      <br>
+      <ur-input class="input-demo" v-model="input" placeholder="请输入内容" clearable>
+        <template slot="prepend">密码</template>
+        <ur-button slot="append">提交</ur-button>
+      </ur-input>
+    </div>
+    <div>
+      <p class="title">标签</p>
+      <ur-tag
+        class="tag-demo"
+        v-for="tag in tags"
+        :key="tag.name"
+        closable
+        @close="handleClose"
+        :type="tag.type">
+        {{tag.name}}
+      </ur-tag>
+    </div>
+
+    <div>
+      <p class="title">下拉框</p>
+      <el-select v-model="value" placeholder="请选择">
+        <el-option
+          v-for="item in options"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value">
+        </el-option>
+      </el-select>
+    </div>
+    <div style="margin-top: 20rem;">
+      <p class="title">跑马灯</p>
+      <test-carousel></test-carousel>
+    </div>
   </div>
 </template>
 
@@ -94,10 +121,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
-.ur-input {
-  margin: 30px;
+.title {
+  font-size: 1.5rem;
+}
+.button-demo {
+  margin: 0 1rem;
+  &.active {
+    border: 0;
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
+  }
+}
+.input-demo {
+  margin: 0 0 0.8rem;
+  width: 25rem;
+}
+.tag-demo {
+  margin: 0 0.4rem;
 }
 </style>
