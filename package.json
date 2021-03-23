@@ -13,6 +13,10 @@
     "lint": "vue-cli-service lint",
     "lib": "vue-cli-service build --target lib --name unreal-ui --dest lib packages/index.js"
   },
+  "dependencies": {
+    "resize-observer-polyfill": "^1.5.0",
+    "throttle-debounce": "^1.0.1"
+  },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",

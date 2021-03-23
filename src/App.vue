@@ -13,6 +13,14 @@
       :type="tag.type">
       {{tag.name}}
     </ur-tag>
+    <el-select v-model="value" placeholder="请选择">
+      <el-option
+        v-for="item in options"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value">
+      </el-option>
+    </el-select>
     <test-carousel></test-carousel>
   </div>
 </template>
@@ -35,6 +43,35 @@ export default {
         { name: '标签四', type: 'warning' },
         { name: '标签五', type: 'danger' }
       ],
+      options: [{
+        value: '选项1',
+        label: '黄金糕'
+      }, {
+        value: '选项2',
+        label: '双皮奶'
+      }, {
+        value: '选项3',
+        label: '蚵仔煎'
+      }, {
+        value: '选项4',
+        label: '龙须面'
+      }, {
+        value: '选项5',
+        label: '北京烤鸭'
+      }, {
+        value: '选项6',
+        label: '北京烤鸭'
+      }, {
+        value: '选项7',
+        label: '北京烤鸭'
+      }, {
+        value: '选项8',
+        label: '北京烤鸭'
+      }, {
+        value: '选项9',
+        label: '北京烤鸭'
+      }],
+      value: '',
     }
   },
   methods: {

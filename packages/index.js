@@ -4,10 +4,12 @@ import UrCarousel from './carousel';
 import UrCarouselItem from './carousel-item';
 import UrInput from './input';
 import UrTag from './tag';
+import UrSelect from './select';
+import UrOption from './option';
 
 
 // 存储组件列表
-const components = [UrButton, UrCarousel, UrCarouselItem, UrInput, UrTag];
+const components = [UrButton, UrCarousel, UrCarouselItem, UrInput, UrTag, UrSelect, UrOption];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
 const install = function (Vue) {
@@ -31,4 +33,6 @@ export default {
   UrCarouselItem,
   UrInput,
   UrTag,
+  UrSelect,
+  UrOption,
 };
