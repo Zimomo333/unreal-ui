@@ -42,9 +42,9 @@ export default {
     ];
     const tagUr = (
       <span class={classes} style={{ backgroundColor: this.color }} on-click={this.handleClick}>
-        {this.$slots.default}
+        <span>{this.$slots.default}</span>
         {this.closable && <i class="ur-tag__close" on-click={this.handleClose}>
-          <svg t="1616421224350" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2058" width="200" height="200"><path d="M810.666667 273.493333L750.506667 213.333333 512 451.84 273.493333 213.333333 213.333333 273.493333 451.84 512 213.333333 750.506667 273.493333 810.666667 512 572.16 750.506667 810.666667 810.666667 750.506667 572.16 512z" p-id="2059" fill="#707070"></path></svg>
+          <svg fill="#707070" t="1616421224350" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2058" width="200" height="200"><path d="M810.666667 273.493333L750.506667 213.333333 512 451.84 273.493333 213.333333 213.333333 273.493333 451.84 512 213.333333 750.506667 273.493333 810.666667 512 572.16 750.506667 810.666667 810.666667 750.506667 572.16 512z" p-id="2059"></path></svg>
         </i>}
       </span>
     );
@@ -60,11 +60,10 @@ export default {
     border: 0.0625rem solid #D1D9E6;
     box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
     display: inline-block;
-    height: 1.5rem;
-    padding: 0 0.425rem;
-    line-height: 1.6;
-    font-size: 1rem;
-    font-weight: 600;
+    height: 1.4rem;
+    padding: 0 .3rem 0 .6rem;
+    font-size: 0.7rem;
+    font-weight: bold;
     text-align: center;
     color: #409eff;
     border-width: 1px;
@@ -73,8 +72,14 @@ export default {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     white-space: nowrap;
+    line-height: 1.9;
+    
+    span {
+      vertical-align: middle;
+    }
 
     .ur-tag__close {
+      vertical-align: middle;
       width: 1rem;
       height: 1rem;
       display: inline-block;
@@ -82,6 +87,13 @@ export default {
       svg {
         width: 1rem;
         height: 1rem;
+        fill: #409eff;
+      }
+
+      &:hover {
+        svg {
+          fill: #fff;
+        }
       }
     }
   }
@@ -99,6 +111,10 @@ export default {
     background-color: #f4f4f5;
     border-color: #e9e9eb;
     color: #909399;
+
+    svg {
+      fill: #909399;
+    }
   }
   .ur-tag.ur-tag--info.is-hit {
     border-color: #909399;
@@ -114,6 +130,10 @@ export default {
     background-color: #f0f9eb;
     border-color: #e1f3d8;
     color: #67c23a;
+
+    svg {
+      fill: #67c23a;
+    }
   }
   .ur-tag.ur-tag--success.is-hit {
     border-color: #67c23a;
@@ -124,11 +144,19 @@ export default {
   .ur-tag.ur-tag--success .ur-tag__close:hover {
     color: #fff;
     background-color: #67c23a;
+
+    svg {
+      fill: #fff;
+    }
   }
   .ur-tag.ur-tag--warning {
     background-color: #fdf6ec;
     border-color: #faecd8;
     color: #e6a23c;
+
+    svg {
+      fill: #e6a23c;
+    }
   }
   .ur-tag.ur-tag--warning.is-hit {
     border-color: #e6a23c;
@@ -144,6 +172,10 @@ export default {
     background-color: #fef0f0;
     border-color: #fde2e2;
     color: #f56c6c;
+
+    svg {
+      fill: #f56c6c;
+    }
   }
   .ur-tag.ur-tag--danger.is-hit {
     border-color: #f56c6c;
