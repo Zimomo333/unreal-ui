@@ -47,7 +47,7 @@ export default {
     font-size: 1rem;
     border: 0.0625rem solid #D1D9E6;
     border-radius: 0.55rem;
-    padding: 0.55rem 0.95rem;
+    padding: 0.55rem 0.6rem;
     box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
     color: #31344b;
     background-color: #e6e7ee;
@@ -76,17 +76,18 @@ export default {
     }
 
     &.mini {
-      padding: 0.5rem;
-      font-size: 0.7rem !important;
+      padding: 0.4rem;
+      font-size: 0.6rem !important;
     }
 
     &.small {
-      padding: 0.6rem;
-      font-size: 0.875rem !important;
+      padding: 0.4rem;
+      font-size: 0.8rem !important;
     }
 
     &.large {
-      font-size: 1.25rem !important;
+      padding: 0.7rem;
+      font-size: 1.4rem !important;
     }
 
     .loading {
