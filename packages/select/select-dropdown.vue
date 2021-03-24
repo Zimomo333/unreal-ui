@@ -91,17 +91,18 @@ export default {
   margin: 0.7rem 0;
 }
 .el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
-  color: #409eff;
-  background-color: #fff;
+  // color: #409eff;
+  // background-color: #fff;
+  font-weight: bolder;
 }
 .el-select-dropdown.is-multiple .el-select-dropdown__item.selected.hover {
-  background-color: #f5f7fa;
+  // background-color: #f5f7fa;
 }
 .el-select-dropdown.is-multiple .el-select-dropdown__item.selected::after {
   position: absolute;
   right: 20px;
   font-family: element-icons;
-  content: '\e6da';
+  content: '√';
   font-size: 12px;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;

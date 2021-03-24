@@ -2,7 +2,10 @@
   <div id="app">
     <div>
       <p class="title">按钮</p>
-      <ur-button class="button-demo">弹起</ur-button>
+      <ur-button class="button-demo" size="large">超大尺寸</ur-button>
+      <ur-button class="button-demo" size="medium">中等尺寸</ur-button>
+      <ur-button class="button-demo" size="small">小型尺寸</ur-button>
+      <ur-button class="button-demo" size="mini">超小尺寸</ur-button>
       <ur-button class="button-demo" :loading="true">Loading...</ur-button>
       <ur-button class="button-demo active">按下</ur-button>
     </div>
@@ -12,11 +15,11 @@
         <template slot="prepend">Http://</template>
       </ur-input>
       <br>
-      <ur-input class="input-demo" v-model="input" placeholder="请输入内容" clearable>
+      <ur-input class="input-demo" placeholder="请输入内容" clearable>
         <template slot="append">.com</template>
       </ur-input>
       <br>
-      <ur-input class="input-demo" v-model="input" placeholder="请输入内容" clearable>
+      <ur-input class="input-demo" v-model="input" placeholder="请输入内容" show-password>
         <template slot="prepend">密码</template>
         <ur-button slot="append">提交</ur-button>
       </ur-input>
@@ -35,8 +38,8 @@
     </div>
 
     <div>
-      <p class="title">下拉框</p>
-      <el-select v-model="value" placeholder="请选择">
+      <p class="title">下拉框多选</p>
+      <el-select v-model="value" multiple placeholder="请选择">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -46,7 +49,7 @@
       </el-select>
     </div>
     <div style="margin-top: 20rem;">
-      <p class="title">跑马灯</p>
+      <p class="title">面包屑</p>
       <test-carousel></test-carousel>
     </div>
   </div>
@@ -72,31 +75,31 @@ export default {
       ],
       options: [{
         value: '选项1',
-        label: '黄金糕'
+        label: '选项1'
       }, {
         value: '选项2',
-        label: '双皮奶'
+        label: '选项2'
       }, {
         value: '选项3',
-        label: '蚵仔煎'
+        label: '选项3'
       }, {
         value: '选项4',
-        label: '龙须面'
+        label: '选项4'
       }, {
         value: '选项5',
-        label: '北京烤鸭'
+        label: '选项5'
       }, {
         value: '选项6',
-        label: '北京烤鸭'
+        label: '选项6'
       }, {
         value: '选项7',
-        label: '北京烤鸭'
+        label: '选项7'
       }, {
         value: '选项8',
-        label: '北京烤鸭'
+        label: '选项8'
       }, {
         value: '选项9',
-        label: '北京烤鸭'
+        label: '选项9'
       }],
       value: '',
     }
@@ -125,6 +128,7 @@ body {
 
 .title {
   font-size: 1.5rem;
+  margin: .8rem 0;
 }
 .button-demo {
   margin: 0 1rem;

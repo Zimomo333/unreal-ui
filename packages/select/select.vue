@@ -1716,6 +1716,7 @@ export default {
   align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  padding: 0.5rem;
 }
 .el-select .el-tag__close {
   margin-top: -2px;
