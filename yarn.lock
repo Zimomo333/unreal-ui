@@ -8379,10 +8379,13 @@ unquote@~1.1.1:
   resolved "https://registry.yarnpkg.com/unquote/-/unquote-1.1.1.tgz#8fded7324ec6e88a0ff8b905e7c098cdc086d544"
   integrity sha1-j97XMk7G6IoP+LkF58CYzcCG1UQ=
 
-unreal-ui@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/unreal-ui/-/unreal-ui-1.1.2.tgz#e094a987009b0431280309f2c10c382c357a8e3d"
-  integrity sha512-hROp0rEKSQN2MQKozd0pgr4Fun/kewvKQIP5wc1+TgaTh+lXuZxeMHTJdegw8pSbTYHIcSl2uGQtFkUTYX0UMQ==
+unreal-ui@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/unreal-ui/-/unreal-ui-1.1.4.tgz#1b11788226c650fa5ea1beb1ed14cf9f6ac8e2ea"
+  integrity sha512-qg0E2Y14RMXVzEDUpHn9ndvoNj1mi+X3iAisW7LUlXyMOGmmk5UqRInwIs4cbxUgTd2NTCBC53us7aNdlMRNWA==
+  dependencies:
+    resize-observer-polyfill "^1.5.0"
+    throttle-debounce "^1.0.1"
 
 unset-value@^1.0.0:
   version "1.0.0"

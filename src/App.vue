@@ -37,7 +37,7 @@
       </ur-tag>
     </div>
 
-    <div>
+    <div style="padding-bottom: 20rem;">
       <p class="title">下拉框多选</p>
       <el-select v-model="value" multiple placeholder="请选择">
         <el-option
@@ -48,8 +48,16 @@
         </el-option>
       </el-select>
     </div>
-    <div style="margin-top: 20rem;">
+    <div>
       <p class="title">面包屑</p>
+      <ur-breadcrumb separator="/">
+        <ur-breadcrumb-item :to="{ path: '/' }">首页</ur-breadcrumb-item>
+        <ur-breadcrumb-item><a href="/">活动管理</a></ur-breadcrumb-item>
+        <ur-breadcrumb-item>活动列表</ur-breadcrumb-item>
+      </ur-breadcrumb>
+    </div>
+    <div>
+      <p class="title">跑马灯</p>
       <test-carousel></test-carousel>
     </div>
   </div>
