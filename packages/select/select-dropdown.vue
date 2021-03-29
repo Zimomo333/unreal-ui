@@ -1,6 +1,6 @@
 <template>
   <div
-    class="el-select-dropdown el-popper"
+    class="ur-select-dropdown ur-popper"
     :class="[{ 'is-multiple': $parent.multiple }, popperClass]"
     :style="{ minWidth: minWidth }"
   >
@@ -12,9 +12,9 @@
 import Popper from '@/utils/vue-popper';
 
 export default {
-  name: 'ElSelectDropdown',
+  name: 'UrSelectDropdown',
 
-  componentName: 'ElSelectDropdown',
+  componentName: 'UrSelectDropdown',
 
   mixins: [Popper],
 
@@ -75,10 +75,10 @@ export default {
 </script>
 
 <style lang="scss">
-.el-scrollbar {
+.ur-scrollbar {
   border-radius: 0.55rem;
 }
-.el-select-dropdown {
+.ur-select-dropdown {
   position: absolute;
   z-index: 1001;
   border: 0.0625rem solid #D1D9E6;
@@ -90,15 +90,15 @@ export default {
   box-sizing: border-box;
   margin: 0.7rem 0;
 }
-.el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
+.ur-select-dropdown.is-multiple .ur-select-dropdown__item.selected {
   // color: #409eff;
   // background-color: #fff;
   font-weight: bolder;
 }
-.el-select-dropdown.is-multiple .el-select-dropdown__item.selected.hover {
+.ur-select-dropdown.is-multiple .ur-select-dropdown__item.selected.hover {
   // background-color: #f5f7fa;
 }
-.el-select-dropdown.is-multiple .el-select-dropdown__item.selected::after {
+.ur-select-dropdown.is-multiple .ur-select-dropdown__item.selected::after {
   position: absolute;
   right: 20px;
   font-family: element-icons;
@@ -108,20 +108,20 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.el-select-dropdown .el-scrollbar.is-empty .el-select-dropdown__list {
+.ur-select-dropdown .ur-scrollbar.is-empty .ur-select-dropdown__list {
   padding: 0;
 }
-.el-select-dropdown__empty {
+.ur-select-dropdown__empty {
   padding: 10px 0;
   margin: 0;
   text-align: center;
   color: #999;
   font-size: 14px;
 }
-.el-select-dropdown__wrap {
+.ur-select-dropdown__wrap {
   max-height: 274px;
 }
-.el-select-dropdown__list {
+.ur-select-dropdown__list {
   list-style: none;
   padding: 6px 0;
   margin: 0;

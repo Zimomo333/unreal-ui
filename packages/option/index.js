@@ -1,8 +1,8 @@
-import ElOption from './option.vue';
+import UrOption from './option.vue';
 
 /* istanbul ignore next */
-ElOption.install = function(Vue) {
-  Vue.component(ElOption.name, ElOption);
+UrOption.install = function(Vue) {
+  Vue.component(UrOption.name, UrOption);
 };
 
-export default ElOption;
+export default UrOption;

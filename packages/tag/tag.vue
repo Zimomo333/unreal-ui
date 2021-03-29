@@ -43,9 +43,7 @@ export default {
     const tagUr = (
       <span class={classes} style={{ backgroundColor: this.color }} on-click={this.handleClick}>
         <span>{this.$slots.default}</span>
-        {this.closable && <i class="ur-tag__close" on-click={this.handleClose}>
-          <svg fill="#707070" t="1616421224350" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2058" width="200" height="200"><path d="M810.666667 273.493333L750.506667 213.333333 512 451.84 273.493333 213.333333 213.333333 273.493333 451.84 512 213.333333 750.506667 273.493333 810.666667 512 572.16 750.506667 810.666667 810.666667 750.506667 572.16 512z" p-id="2059"></path></svg>
-        </i>}
+        {this.closable && <svg class="ur-tag__close" on-click={this.handleClose} fill="#707070" t="1616421224350" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2058" width="200" height="200"><path d="M810.666667 273.493333L750.506667 213.333333 512 451.84 273.493333 213.333333 213.333333 273.493333 451.84 512 213.333333 750.506667 273.493333 810.666667 512 572.16 750.506667 810.666667 810.666667 750.506667 572.16 512z" p-id="2059"></path></svg>}
       </span>
     );
 
@@ -84,16 +82,10 @@ export default {
       height: 1rem;
       display: inline-block;
       border-radius: 50%;
-      svg {
-        width: 1rem;
-        height: 1rem;
-        fill: #409eff;
-      }
+      fill: #409eff;
 
       &:hover {
-        svg {
-          fill: #fff;
-        }
+        fill: #fff;
       }
     }
   }
@@ -112,7 +104,7 @@ export default {
     border-color: #e9e9eb;
     color: #909399;
 
-    svg {
+    .ur-tag__close {
       fill: #909399;
     }
   }
@@ -125,13 +117,14 @@ export default {
   .ur-tag.ur-tag--info .ur-tag__close:hover {
     color: #fff;
     background-color: #909399;
+    fill: #fff;
   }
   .ur-tag.ur-tag--success {
     background-color: #f0f9eb;
     border-color: #e1f3d8;
     color: #67c23a;
 
-    svg {
+    .ur-tag__close {
       fill: #67c23a;
     }
   }
@@ -144,17 +137,14 @@ export default {
   .ur-tag.ur-tag--success .ur-tag__close:hover {
     color: #fff;
     background-color: #67c23a;
-
-    svg {
-      fill: #fff;
-    }
+    fill: #fff;
   }
   .ur-tag.ur-tag--warning {
     background-color: #fdf6ec;
     border-color: #faecd8;
     color: #e6a23c;
 
-    svg {
+    .ur-tag__close {
       fill: #e6a23c;
     }
   }
@@ -167,13 +157,14 @@ export default {
   .ur-tag.ur-tag--warning .ur-tag__close:hover {
     color: #fff;
     background-color: #e6a23c;
+    fill: #fff;
   }
   .ur-tag.ur-tag--danger {
     background-color: #fef0f0;
     border-color: #fde2e2;
     color: #f56c6c;
 
-    svg {
+    .ur-tag__close {
       fill: #f56c6c;
     }
   }
@@ -186,6 +177,7 @@ export default {
   .ur-tag.ur-tag--danger .ur-tag__close:hover {
     color: #fff;
     background-color: #f56c6c;
+    fill: #fff;
   }
   .ur-tag .ur-icon-close {
     border-radius: 50%;
@@ -217,6 +209,7 @@ export default {
   .ur-tag--dark .ur-tag__close:hover {
     color: #fff;
     background-color: #66b1ff;
+    fill: #fff;
   }
   .ur-tag--dark.ur-tag--info {
     background-color: #909399;
@@ -232,6 +225,7 @@ export default {
   .ur-tag--dark.ur-tag--info .ur-tag__close:hover {
     color: #fff;
     background-color: #a6a9ad;
+    fill: #fff;
   }
   .ur-tag--dark.ur-tag--success {
     background-color: #67c23a;
@@ -247,6 +241,7 @@ export default {
   .ur-tag--dark.ur-tag--success .ur-tag__close:hover {
     color: #fff;
     background-color: #85ce61;
+    fill: #fff;
   }
   .ur-tag--dark.ur-tag--warning {
     background-color: #e6a23c;
@@ -262,6 +257,7 @@ export default {
   .ur-tag--dark.ur-tag--warning .ur-tag__close:hover {
     color: #fff;
     background-color: #ebb563;
+    fill: #fff;
   }
   .ur-tag--dark.ur-tag--danger {
     background-color: #f56c6c;
@@ -277,6 +273,7 @@ export default {
   .ur-tag--dark.ur-tag--danger .ur-tag__close:hover {
     color: #fff;
     background-color: #f78989;
+    fill: #fff;
   }
   .ur-tag--plain {
     background-color: #fff;
@@ -292,6 +289,7 @@ export default {
   .ur-tag--plain .ur-tag__close:hover {
     color: #fff;
     background-color: #409eff;
+    fill: #fff;
   }
   .ur-tag--plain.ur-tag--info {
     background-color: #fff;
@@ -307,6 +305,7 @@ export default {
   .ur-tag--plain.ur-tag--info .ur-tag__close:hover {
     color: #fff;
     background-color: #909399;
+    fill: #fff;
   }
   .ur-tag--plain.ur-tag--success {
     background-color: #fff;
@@ -322,6 +321,7 @@ export default {
   .ur-tag--plain.ur-tag--success .ur-tag__close:hover {
     color: #fff;
     background-color: #67c23a;
+    fill: #fff;
   }
   .ur-tag--plain.ur-tag--warning {
     background-color: #fff;
@@ -337,6 +337,7 @@ export default {
   .ur-tag--plain.ur-tag--warning .ur-tag__close:hover {
     color: #fff;
     background-color: #e6a23c;
+    fill: #fff;
   }
   .ur-tag--plain.ur-tag--danger {
     background-color: #fff;
@@ -352,6 +353,7 @@ export default {
   .ur-tag--plain.ur-tag--danger .ur-tag__close:hover {
     color: #fff;
     background-color: #f56c6c;
+    fill: #fff;
   }
   .ur-tag--medium {
     height: 28px;

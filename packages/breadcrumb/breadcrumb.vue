@@ -25,7 +25,7 @@ export default {
   },
 
   mounted() {
-    const items = this.$el.querySurectorAll('.ur-breadcrumb__item');
+    const items = this.$el.querySelectorAll('.ur-breadcrumb__item');
     if (items.length) {
       items[items.length - 1].setAttribute('aria-current', 'page');
     }

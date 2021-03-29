@@ -39,14 +39,14 @@
 
     <div style="padding-bottom: 20rem;">
       <p class="title">下拉框多选</p>
-      <el-select v-model="value" multiple placeholder="请选择">
-        <el-option
+      <ur-select v-model="value" multiple placeholder="请选择">
+        <ur-option
           v-for="item in options"
           :key="item.value"
           :label="item.label"
           :value="item.value">
-        </el-option>
-      </el-select>
+        </ur-option>
+      </ur-select>
     </div>
     <div>
       <p class="title">面包屑</p>

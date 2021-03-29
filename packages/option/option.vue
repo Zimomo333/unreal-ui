@@ -2,7 +2,7 @@
   <li
     @mouseenter="hoverItem"
     @click.stop="selectOptionClick"
-    class="el-select-dropdown__item"
+    class="ur-select-dropdown__item"
     v-show="visible"
     :class="{
       'selected': itemSelected,
@@ -23,9 +23,9 @@ import { getValueByPath, escapeRegexpString } from '@/utils/util';
 export default {
   mixins: [Emitter],
 
-  name: 'ElOption',
+  name: 'UrOption',
 
-  componentName: 'ElOption',
+  componentName: 'UrOption',
 
   inject: ['select'],
 
@@ -83,7 +83,7 @@ export default {
 
   watch: {
     currentLabel() {
-      if (!this.created && !this.select.remote) this.dispatch('ElSelect', 'setSelected');
+      if (!this.created && !this.select.remote) this.dispatch('UrSelect', 'setSelected');
     },
     value(val, oldVal) {
       const { remote, valueKey } = this.select;
@@ -91,7 +91,7 @@ export default {
         if (valueKey && typeof val === 'object' && typeof oldVal === 'object' && val[valueKey] === oldVal[valueKey]) {
           return;
         }
-        this.dispatch('ElSelect', 'setSelected');
+        this.dispatch('UrSelect', 'setSelected');
       }
     },
   },
@@ -132,7 +132,7 @@ export default {
 
     selectOptionClick() {
       if (this.disabled !== true && this.groupDisabled !== true) {
-        this.dispatch('ElSelect', 'handleOptionClick', [this, true]);
+        this.dispatch('UrSelect', 'handleOptionClick', [this, true]);
       }
     },
 
@@ -170,7 +170,7 @@ export default {
 </script>
 
 <style lang="scss">
-.el-select-dropdown__item {
+.ur-select-dropdown__item {
   font-size: 14px;
   padding: 0 20px;
   position: relative;
@@ -184,18 +184,18 @@ export default {
   box-sizing: border-box;
   cursor: pointer;
 }
-.el-select-dropdown__item.is-disabled {
+.ur-select-dropdown__item.is-disabled {
   color: #c0c4cc;
   cursor: not-allowed;
 }
-.el-select-dropdown__item.is-disabled:hover {
-  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
+.ur-select-dropdown__item.is-disabled:hover {
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
 }
-.el-select-dropdown__item.hover,
-.el-select-dropdown__item:hover {
-  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF;
+.ur-select-dropdown__item.hover,
+.ur-select-dropdown__item:hover {
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff;
 }
-.el-select-dropdown__item.selected {
+.ur-select-dropdown__item.selected {
   // color: #409eff;
   // font-weight: 700;
   font-weight: bolder;
