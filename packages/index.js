@@ -8,6 +8,10 @@ import UrSelect from './select';
 import UrOption from './option';
 import UrBreadcrumb from './breadcrumb';
 import UrBreadcrumbItem from './breadcrumb-item';
+import UrRadio from './radio';
+import UrRadioGroup from './radio-group';
+import UrCheckbox from './checkbox';
+import UrCheckboxGroup from './checkbox-group';
 
 
 // 存储组件列表
@@ -21,6 +25,10 @@ const components = [
   UrOption,
   UrBreadcrumb,
   UrBreadcrumbItem,
+  UrRadio,
+  UrRadioGroup,
+  UrCheckbox,
+  UrCheckboxGroup,
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -49,4 +57,8 @@ export default {
   UrOption,
   UrBreadcrumb,
   UrBreadcrumbItem,
+  UrRadio,
+  UrRadioGroup,
+  UrCheckbox,
+  UrCheckboxGroup,
 };

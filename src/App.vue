@@ -57,6 +57,22 @@
       </ur-breadcrumb>
     </div>
     <div>
+      <p class="title">单选框</p>
+      <ur-radio-group v-model="radio">
+        <ur-radio :label="3">备选项</ur-radio>
+        <ur-radio :label="6">备选项</ur-radio>
+        <ur-radio :label="9">备选项</ur-radio>
+      </ur-radio-group>
+      <p class="title">多选框</p>
+      <ur-checkbox-group v-model="checkList">
+        <ur-checkbox label="复选框 A"></ur-checkbox>
+        <ur-checkbox label="复选框 B"></ur-checkbox>
+        <ur-checkbox label="复选框 C"></ur-checkbox>
+        <ur-checkbox label="禁用" disabled></ur-checkbox>
+        <ur-checkbox label="选中且禁用" disabled></ur-checkbox>
+      </ur-checkbox-group>
+    </div>
+    <div>
       <p class="title">跑马灯</p>
       <test-carousel></test-carousel>
     </div>
@@ -110,6 +126,8 @@ export default {
         label: '选项9'
       }],
       value: '',
+      radio: 3,
+      checkList: ['选中且禁用','复选框 A'],
     }
   },
   methods: {
