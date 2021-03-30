@@ -236,37 +236,38 @@ export default {
   cursor: not-allowed;
 }
 .ur-radio__input.is-checked .ur-radio__inner {
-  border-color: #409eff;
-  background: #409eff;
+  // border-color: #409eff;
+  // background: #409eff;
 }
 .ur-radio__input.is-checked .ur-radio__inner::after {
   -webkit-transform: translate(-50%, -50%) scale(1);
   transform: translate(-50%, -50%) scale(1);
 }
 .ur-radio__input.is-checked + .ur-radio__label {
-  color: #409eff;
+  // color: #409eff;
 }
 .ur-radio__input.is-focus .ur-radio__inner {
-  border-color: #409eff;
+  // border-color: #409eff;
 }
 .ur-radio__inner {
-  border: 1px solid #dcdfe6;
-  border-radius: 100%;
+  border: 1px solid #D1D9E6;
+  border-radius: 50%;
   width: 14px;
   height: 14px;
-  background-color: #fff;
+  background-color: #D1D9E6;
   cursor: pointer;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  box-shadow: inset 1px 2px 2px #b8b9be, inset -5px -2px 4px #FFFFFF;
 }
 .ur-radio__inner:hover {
-  border-color: #409eff;
+  // border-color: #409eff;
 }
 .ur-radio__inner::after {
   width: 4px;
   height: 4px;
   border-radius: 100%;
-  background-color: #fff;
+  background-color: #31344b;;
   content: '';
   position: absolute;
   left: 50%;
