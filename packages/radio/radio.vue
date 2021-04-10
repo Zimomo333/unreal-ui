@@ -250,10 +250,10 @@ export default {
   // border-color: #409eff;
 }
 .ur-radio__inner {
-  border: 1px solid #D1D9E6;
+  border: 1px solid #b1bcce;
   border-radius: 50%;
-  width: 14px;
-  height: 14px;
+  width: 1.2rem;
+  height: 1.2rem;
   background-color: #D1D9E6;
   cursor: pointer;
   -webkit-box-sizing: border-box;
@@ -264,10 +264,10 @@ export default {
   // border-color: #409eff;
 }
 .ur-radio__inner::after {
-  width: 4px;
-  height: 4px;
+  width: 0.2rem;
+  height: 0.2rem;
+  border: 0.3rem solid black;
   border-radius: 100%;
-  background-color: #31344b;;
   content: '';
   position: absolute;
   left: 50%;
