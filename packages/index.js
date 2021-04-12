@@ -1,4 +1,3 @@
-// import '../assets/scss/Ur-ui.scss';
 import UrButton from './button';
 import UrCarousel from './carousel';
 import UrCarouselItem from './carousel-item';
@@ -12,7 +11,7 @@ import UrRadio from './radio';
 import UrRadioGroup from './radio-group';
 import UrCheckbox from './checkbox';
 import UrCheckboxGroup from './checkbox-group';
-
+import UrPagination from './pagination';
 
 // 存储组件列表
 const components = [
@@ -29,6 +28,7 @@ const components = [
   UrRadioGroup,
   UrCheckbox,
   UrCheckboxGroup,
+  UrPagination,
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -61,4 +61,5 @@ export default {
   UrRadioGroup,
   UrCheckbox,
   UrCheckboxGroup,
+  UrPagination,
 };
